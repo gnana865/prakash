@@ -1,0 +1,4 @@
+key,value
+sourcefile_loc,C:\Users\Analytix\Desktop\12AM\emp_out.csv
+targetfile_loc,
+mssql_username,sa
