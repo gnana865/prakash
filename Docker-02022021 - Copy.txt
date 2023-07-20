@@ -1,0 +1,185 @@
+dockerd &
+Ps -ef |grep docker
+docker pull hello-world-image is nothing but layers
+docker pull ubuntu
+docker image inspect ubuntu
+docker image rm <image_name>
+docker images ls
+docker pull <image_name>:<tag>
+docker image inspect <image_name>
+docker image rm <image_name>
+docker container ls
+docker container run -it ubuntu:latest /bin/bash
+docker ps
+docker container ps -a
+docker container ps
+docker container exec -it b0da4f1925b3 /bin/bash
+docker container start <Id>
+docker container stop <ID>
+docker container cp sudha.txt bfd69a6e8afa:/opt/sudha_test
+docker container exec run -it bfd69a6e8afa /bin/bash
+docker container cp <file> <container ID>:<containre_dest_folder>
+Docker username:sudhakarburra
+       Password:Sudhakar@123
+	   
+26  which docker
+   27  ps -ef |grep docker
+   28  dockerd &
+   29  ps -ef |grep docker
+   30  docker image ls
+   31  docker pull hello-world
+   32  docker image ls
+   33  docker pull ubuntu
+   34  docker image ls
+   35  docker image inspect ubuntu-->To verify all the details
+   36  docker image rm -f ubuntu
+   37  docker image ls
+   38  docker
+   39  docker image --help
+   40  docker container run -it ubuntu:latest /bin/bash
+   41  docker container ps -a
+   42  docker container ps
+   43  docker container run -it ubuntu:latest /bin/bash
+   44  docker container ps -a
+   45  docker container ps
+   46  docker container start 6e67034077d1
+   47  docker container ls
+   48  docker container exec -it 6e67034077d1 /bin/bash
+   49  docker commit 6e67034077d1 ubuntu_folder
+   50  docker image ls
+   51  docker container run -it ubuntu_folder /bin/bash
+   52  ls
+   53  touch sudha.txt
+   54  ls
+   55  view sudha.txt
+   56  docker ps -a
+   57  docker container cp sudha.txt bfd69a6e8afa:/opt/sudha_test
+   58  docker container exec -it bfd69a6e8afa /bin/bash
+   59  docker ps
+   60  docker container start bfd69a6e8afa
+   61  docker container exec -it bfd69a6e8afa /bin/bash
+   62  docker container ls
+   63  docker container exec run -it 89e0aa6fc156 /bin/bash
+   64  docker ps
+   65  docker container run -it centos /bin/bash
+   66  docker ps
+   67  history
+     141  which docker
+  142  docker ps -a
+  143  dockerd &
+  144  docker images
+  145  ps -ef |grep docker
+  146  clear
+  147  which docker
+  148  docker pull nginx
+  149  dockerd &
+  150  docker pull nginx
+  151  docker image ls
+  152  docker container run nginx
+  153  docker container run -it nginx /bin/bash
+  154  docker container ls
+  155  docker container run --detach --name webserver_1 --publish 8085:80 nginx
+  156  ps -ef |grep docker
+  157  docker container ls
+  158  docker container run --detach --name webserver_2 --publish 8081:80 nginx
+  159  docker container ls
+  160  ps -ef |grep docker
+  161  ifconfig
+  162  docker container ls
+  163  history
+  
+  Docker container stop webserver_1
+  Docker container start webserver_1
+  docker cp cat.jpeg webserver_1:/usr/share/nginx/html/
+PS C:\Program Files\PuTTY> .\pscp.exe -P 22 -i C:\Users\anil\Downloads\Gani6.ppk C:\Users\anil\Downloads\cat.jpg ec2-use
+r@13.235.245.30:/home/ec2-user
+
+PS C:\Program Files\PuTTY> .\plink.exe -P 22 -i C:\Users\anil\Downloads\Gani6.ppk ec2-user@13.235.245.30:/home/ec2-user
+ls -lrth
+PS C:\Program Files\PuTTY> .\pscp.exe -P 22 -i C:\Users\anil\Downloads\Gani6.ppk C:\Users\anil\Downloads\cat.jpg ec2-use
+r@13.235.245.30:/home/ec2-user
+PS C:\Program Files\PuTTY> .\plink.exe -P 22 -i C:\Users\anil\Downloads\Gani6.ppk ec2-user@13.235.245.30:/home/ec2-user
+ls -lrth
+
+#app.js
+const http = require('http')
+const os = require('os')
+console.log("Kubia server starting.....");
+
+http.createServer(function(request, response) {
+  console.log("Received request frpm " + request.connection.remoteAddress);
+  response.writeHead(200);
+  response.end("You've hit " + os.hostname() + "\n");
+}).listen(8080);
+
+
+#Dockerfile
+FROM node:7
+ADD app.js /app.js
+ENTRYPOINT ["node", "app.js"]
+
+https://docs.docker.com/engine/reference/builder/
+
+
+
+FROM nginx:latest
+ADD cat.jpeg /usr/share/nginx/html/
+COPY images.html /usr/share/nginx/html/
+
+Docker file:
+------------
+FROM centos:latest
+
+MAINTAINER sudhakar22.it@gmail.com
+
+RUN mkdir /opt/tomcat
+
+RUN yum -y install wget
+
+WORKDIR /opt/tomcat
+
+RUN wget https://mirrors.estointernet.in/apache/tomcat/tomcat-9/v9.0.43/bin/apache-tomcat-9.0.43.tar.gz
+
+RUN tar -xvzf apache-tomcat-9.0.43.tar.gz
+
+RUN mv apache-tomcat-9.0.43/* /opt/tomcat/
+
+RUN yum -y install java
+
+EXPOSE 8080
+
+CMD ["/opt/tomcat/bin/catalina.sh", "run"]
+
+
+ 215  cat docker_file
+  216  cd docker_file/
+  217  ls
+  218  ls -lrth
+  219  ps -ef |grep docker
+  220  cd ..
+  221  ls
+  222  dockerd &
+  223  ps -ef |grep docker
+  224  ls -lrth
+  225  mkdir tomcat
+  226  ls
+  227  cd tomcat
+  228  ls
+  229  view Dockerfile
+  230  cat Dockerfile
+  231  docker image ls
+  232  docker image build -t tomcat
+  233  docker image build -t tomcat .
+  234  docker image ls
+  235  docker container run --detach --name tomcat --publish 8081:8080 tomcat
+  236  docker container ls
+  237  history
+
+
+https://docs.docker.com/engine/reference/builder/--Commands link
+
+
+
+	   
+
+
